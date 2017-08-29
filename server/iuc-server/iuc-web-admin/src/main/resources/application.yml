@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: iuc
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: com.isoft.ifx.domain.dialect.DefaultPostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+  database:
+    driverClassName: org.postgresql.Driver
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/iuc
+    username: postgres
+    password: qwe123,./
+  output:
+    ansi:
+      enabled: always
+  jackson:
+    date-format: com.fasterxml.jackson.databind.util.ISO8601DateFormat
+  mvc:
+    date-format: com.fasterxml.jackson.databind.util.ISO8601DateFormat
+server:
+  port: 8001
+  error:
+    include-stacktrace: on_trace_param
+security:
+  filter-order: 0
+  oauth2:
+    resource:
+      id: iuc
+    client:
+      client-id: iuc
+      client-secret: 123456789
+      access-token-uri: http://localhost:8001/oauth/token
+logging:
+  level:
+    ROOT: INFO
+    #org.springframework.transaction: DEBUG
+    org.springframework.web: DEBUG
+    #org.springframework.security: DEBUG
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+

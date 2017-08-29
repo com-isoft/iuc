@@ -1,0 +1,2 @@
+# 使用密码模式获取token
+curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=password&username=admin&password=admin&client_id=ihr&client_secret=123456789" "http://ihr:123456789@localhost:8080/oauth/token"
